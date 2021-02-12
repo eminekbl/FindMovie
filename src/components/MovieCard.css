@@ -1,0 +1,79 @@
+#cardColumns{
+    z-index: 100;
+    width:  500px;
+    height:  400px;
+
+  }
+  
+  #card{
+          position: relative;
+          width: 100%;
+          height: 100%;
+          z-index: 100;
+  }
+  
+  .overlay {
+      position: absolute;  
+      top: 0;   
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(34, 34, 34, 0);
+      transition: background 0.5s ease;
+  }
+  
+  #card:hover .overlay {
+      display: block;
+      background: rgba(0, 0, 0, .3);
+  }
+  
+  #cardImg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      
+    }
+
+  #button {
+      position: absolute;
+      top: 45%;
+      left:25%;
+      text-align: center;
+      opacity: 0;
+      transition: opacity .35s ease;
+      width: 50%;
+      padding: 12px 48px;
+      color: white;
+      background-color: transparent;
+      border: solid 2px white;
+      z-index: 1;
+  }
+  #card:hover #button {
+      opacity: 1;
+    }
+  
+  #card #button:hover{
+      color: black;
+      background-color :white;
+  }
+  
+  #title {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 180px;
+      font-weight: 700;
+      font-size: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      color: white;
+      z-index: 1;
+      transition: top .5s ease;
+    }
+  
+  #card:hover #title {
+      top: 90px;
+    }
+  

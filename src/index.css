@@ -5,9 +5,51 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:  rgb(12, 16, 32) !important;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ #home{
+  background: url('https://source.unsplash.com/4SLz_RCk6kQ/1500x800') no-repeat center center fixed;
+  display: table;
+  height:90vh;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  -webkit-background-size : cover;
+  -moz-background-size: cover;
+ 
+}
+
+.landing-text {
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+
+}
+
+.navbar{
+  background-color: rgba(8, 10, 20, 0.787)
+}
+
+#form-control{
+ background:  rgba(54, 56, 65, 0.472);
+ color: white;
+} 
+#input-button{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+#input-button:hover{
+  color: rgb(17, 19, 44);
+  background-color: white;
+}
+#category_section{
+  background-color:  rgb(12, 16, 32);
 }
