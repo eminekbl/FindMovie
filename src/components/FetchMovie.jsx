@@ -1,22 +1,36 @@
 import React, { useEffect } from "react";
 import MovieCard from "./MovieCard";
+
+
 function FetchMovie(props) {
   const [result, setResult] = React.useState([]);
   const apiKey = "api_key=28ca7c57c8782bba24844aebcf7d3ca4";
-  const categories = {
-    popular: "https://api.themoviedb.org/3/movie/popular?",
-    search: "https://api.themoviedb.org/3/search/movie?",
-    upcoming: "https://api.themoviedb.org/3/movie/upcoming?",
-    top_rated: "https://api.themoviedb.org/3/movie/top_rated?",
-    similar: `https://api.themoviedb.org/3/movie/${props.id}/similar?`
+  const {id,category,q} =props
+
+  const getMovies=(event)=> {
+    console.log('fetch edildi');
+    fetch(event)
+      .then((response) => response.json())
+      .then((result) => {
+        setResult(result.results);
+      })
+      .catch((error) => console.log("error", error));
   };
+  
   useEffect(() => {
-    switch (props.category) {
+    const categories = {
+      popular: "https://api.themoviedb.org/3/movie/popular?",
+      search: "https://api.themoviedb.org/3/search/movie?",
+      upcoming: "https://api.themoviedb.org/3/movie/upcoming?",
+      top_rated: "https://api.themoviedb.org/3/movie/top_rated?",
+      similar: `https://api.themoviedb.org/3/movie/${id}/similar?`
+    };
+    switch (category) {
       case "popular":
         getMovies([categories.popular, apiKey].join(""));
         break;
       case "search":
-        getMovies([categories.search, apiKey, props.q].join(""));
+        getMovies([categories.search, apiKey, q].join(""));
         break;
       case "upcoming":
         getMovies([categories.upcoming, apiKey].join(""));
@@ -31,17 +45,11 @@ function FetchMovie(props) {
         <h1>Oops!</h1>;
         break;
     }
-  }, []);
 
-  function getMovies(event) {
-    console.log('fetch edildi');
-    fetch(event)
-      .then((response) => response.json())
-      .then((result) => {
-        setResult(result.results);
-      })
-      .catch((error) => console.log("error", error));
-  }
+  },[id,category,q]
+  )
+  
+  
 
   return (
     <div className="text-light">

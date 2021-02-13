@@ -7,17 +7,18 @@ export default function Details(props) {
   const [result, setResult] = React.useState([]);
   React.useEffect(() => {
     getMovie();
-  }, []);
-  function getMovie(event) {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${query}?api_key=28ca7c57c8782bba24844aebcf7d3ca4`
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        setResult(result);
-      })
-      .catch((error) => console.log("error", error));
-  }
+    function getMovie() {
+      fetch(
+        `https://api.themoviedb.org/3/movie/${query}?api_key=28ca7c57c8782bba24844aebcf7d3ca4`
+      )
+        .then((response) => response.json())
+        .then((result) => {
+          setResult(result);
+        })
+        .catch((error) => console.log("error", error));
+    }
+  }, [query]);
+ 
   return (
     <Container className="mt-5">
       <Row>
