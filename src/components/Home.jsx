@@ -8,7 +8,7 @@ import {
   FormControl,
   InputGroup,
   Button,
-  Jumbotron
+  Jumbotron,
 } from "react-bootstrap";
 
 import Categories from "./Categories";
@@ -25,8 +25,6 @@ export default function Home(props) {
   return (
     <Jumbotron id="home" className="justify-content-center">
       <Row className="justify-content-center">
-
-      
         <div className="landing-text">
           <h1 className="text-light mb-3">Search Movie</h1>
           <Row className="justify-content-center">
@@ -58,8 +56,7 @@ export default function Home(props) {
               </InputGroup>
             </Col>
           </Row>
-     
-      </div>
+        </div>
       </Row>
       <Container>
         <Row className="mt-5 justify-content-center">
