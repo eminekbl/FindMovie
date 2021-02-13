@@ -19,10 +19,12 @@ function App() {
   return (
     <Router>
       <NavBar links={links} />
-      <Switch>{routeMaps}</Switch>
-      <Route>
-        <Redirect to="/404" />
-      </Route>
+      <Switch>{routeMaps}
+        <Route>
+          <Redirect to="/404" />
+        </Route>
+      </Switch>
+
     </Router>
   );
 }
