@@ -7,11 +7,10 @@ function Categories(props) {
     <div id="cardColumns">
       <Card
         id="card"
-        style={{ width: "18rem" }}
         as={Link}
-        to={`/Category/${props.category}`}
+        to={`/Category/${props.category}/0`}
       >
-        <Card.Img id="cardImg" variant="top" src={props.url} />
+        <Card.Img id="cardImg" src={props.url} />
         <Card.Body>
           <Card.ImgOverlay className="overlay">
             <Card.Title id="title">{props.category}</Card.Title>

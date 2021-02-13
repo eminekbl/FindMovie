@@ -8,6 +8,7 @@ import {
   FormControl,
   InputGroup,
   Button,
+  Jumbotron
 } from "react-bootstrap";
 
 import Categories from "./Categories";
@@ -22,9 +23,11 @@ export default function Home(props) {
   }
 
   return (
-    <div className="justify-content-center">
-      <div id="home">
-        <div fluid className="landing-text">
+    <Jumbotron id="home" className="justify-content-center">
+      <Row className="justify-content-center">
+
+      
+        <div className="landing-text">
           <h1 className="text-light mb-3">Search Movie</h1>
           <Row className="justify-content-center">
             <Col sm={6}>
@@ -55,23 +58,24 @@ export default function Home(props) {
               </InputGroup>
             </Col>
           </Row>
-        </div>
+     
       </div>
+      </Row>
       <Container>
         <Row className="mt-5 justify-content-center">
-          <Col sm={4}>
+          <Col ml={4}>
             <Categories
               category="popular"
               url="https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"
             />
           </Col>
-          <Col sm={4}>
+          <Col ml={4}>
             <Categories
               category="upcoming"
               url="https://image.tmdb.org/t/p/original/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg"
             />
           </Col>
-          <Col sm={4}>
+          <Col ml={4}>
             <Categories
               category="top rated"
               url="https://image.tmdb.org/t/p/original/fYtHxTxlhzD4QWfEbrC1rypysSD.jpg"
@@ -79,6 +83,6 @@ export default function Home(props) {
           </Col>
         </Row>
       </Container>
-    </div>
+    </Jumbotron>
   );
 }

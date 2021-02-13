@@ -24,9 +24,9 @@ function FetchMovie(props) {
       case "top rated":
         getMovies([categories.top_rated, apiKey].join(""));
         break;
-        case "similar":
-          getMovies([categories.similar, apiKey].join(""));
-          break;
+      case "similar":
+        getMovies([categories.similar, apiKey].join(""));
+        break;
       default:
         <h1>Oops!</h1>;
         break;
@@ -34,7 +34,7 @@ function FetchMovie(props) {
   }, []);
 
   function getMovies(event) {
-    console.log("fetch edildi");
+    console.log('fetch edildi');
     fetch(event)
       .then((response) => response.json())
       .then((result) => {
@@ -44,11 +44,11 @@ function FetchMovie(props) {
   }
 
   return (
-    <div className='text-light'>
+    <div className="text-light">
       {result.length > 0 ? (
         <MovieCard result={result} />
       ) : (
-        <h1>Aradiginiz kriterlere uygun film bulunamadi</h1>
+        <h1>No matches found.</h1>
       )}
     </div>
   );

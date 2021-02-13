@@ -4,7 +4,7 @@ import { Container, Col, Row,Button } from "react-bootstrap";
 export default function Details(props) {
   const params = useParams();
   const { query } = params;
-  const [result, setResult] = React.useState("");
+  const [result, setResult] = React.useState([]);
   React.useEffect(() => {
     getMovie();
   }, []);
@@ -22,8 +22,8 @@ export default function Details(props) {
     <Container className="mt-5">
       <Row>
         <Col sm={6}>
-          <img
-            src={["https://image.tmdb.org/t/p/w342", result.poster_path].join(
+          <img 
+             src={["https://image.tmdb.org/t/p/w342", result.poster_path].join(
               ""
             )}
             alt=""
